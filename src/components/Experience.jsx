@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Input } from "./elementsHTML/Input"
 import { Div } from "./elementsHTML/Div";
+import { ShowButton } from "./elementsHTML/ShowButton";
 
 export function Experience({ onChange, onSave, saveExperience, onDelete }){
 
     const [add, setAdd] = useState(false)
     const [save, setSave] = useState(false)
+    const [show, setShow] = useState(false)
 
     const handleChange = (id, newValue) => {
 
@@ -34,10 +36,21 @@ export function Experience({ onChange, onSave, saveExperience, onDelete }){
 
     }
 
+    const onClick = () =>{
+        setShow(!show)
+    }
+
    
     return (
         <>
-        <h2>Experience</h2>
+        {!show
+        
+        ?<div>
+            <ShowButton onClick={onClick} name="Experiences" />
+        </div>
+        
+        :<div>
+        <ShowButton onClick={onClick}  name="Experiences"/>
         {save
         ?<Div info={saveExperience} onDelete={onDeleteButton} />
         :<div></div>
@@ -56,6 +69,8 @@ export function Experience({ onChange, onSave, saveExperience, onDelete }){
                     <button onClick={handleClick}>+</button>
                 </div>
             }
+        </div>
+        }
         </>
     )
 

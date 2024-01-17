@@ -3,12 +3,13 @@
 import { Div } from "./elementsHTML/Div";
 import { Input } from "./elementsHTML/Input"
 import { useState } from "react";
+import { ShowButton } from "./elementsHTML/ShowButton";
 
 export function Studies({ onChange, onSave, saveStudies, onDelete}) {
 
     const [add, setAdd] = useState(false)
     const [save, setSave] =useState(false)
-   
+    const [show, setShow] = useState(false)
 
     const handleChange = (id, newValue) => {
 
@@ -37,11 +38,21 @@ export function Studies({ onChange, onSave, saveStudies, onDelete}) {
         onDelete(index)
     }
 
+    const onClick = () =>{
+        setShow(!show)
+    }
+
    
     return (
         <>
-        <h2>Studies</h2>
-        {!save
+        {!show 
+        ?<div>
+            <ShowButton onClick={onClick} name="Studies"/>
+        </div>
+        :<div>
+            
+            <ShowButton onClick={onClick} name="Studies"/>
+            {!save
         ?<div></div>
         :<Div info={saveStudies} onDelete={onDeleteButton} />
         }
@@ -58,6 +69,7 @@ export function Studies({ onChange, onSave, saveStudies, onDelete}) {
                     <button onClick={handleClick}>+</button>
                 </div>
             }
+        </div>}
         </>
     )
 }
