@@ -3,7 +3,7 @@ import "../styles/CvDisplay.css"
 import { ExperienceDisplay } from "./elementsHTML/ExperienceDisplay"
 import { StudiesDisplayShow } from "./elementsHTML/StudiesDisplayshow"
 
-export function CvDisplay({ inputValuesPersonal, inputValueStudies, saveStudies, saveExperience }) {
+export function CvDisplay({ inputValuesPersonal, saveStudies, saveExperience }) {
 
     return (
         <>

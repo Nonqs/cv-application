@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import "./displays.css"
 
 export function ExperienceDisplay({ saveExperience}) {
@@ -7,7 +8,7 @@ export function ExperienceDisplay({ saveExperience}) {
       {saveExperience &&
       <div>
         {saveExperience.map((exp, index) => (
-          <section key={index} className="cv-principal" id={exp.company}>
+          <section key={index} className="cv-principal" id={index}>
             <div className="studies">
               <div className="cv-studies">
                 <article>

@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { Input } from "./elementsHTML/Input"
+import { Div } from "./elementsHTML/Div";
 
-export function Experience({ onChange, onSave }){
+export function Experience({ onChange, onSave, saveExperience, onDelete }){
 
     const [add, setAdd] = useState(false)
+    const [save, setSave] = useState(false)
 
     const handleChange = (id, newValue) => {
 
@@ -22,6 +24,13 @@ export function Experience({ onChange, onSave }){
 
       onSave();
       setAdd(!add)
+      setSave(true)
+
+    }
+
+    const onDeleteButton = (index)=>{
+
+        onDelete(index)
 
     }
 
@@ -29,9 +38,13 @@ export function Experience({ onChange, onSave }){
     return (
         <>
         <h2>Experience</h2>
+        {save
+        ?<Div info={saveExperience} onDelete={onDeleteButton} />
+        :<div></div>
+        }
             {add
                 ? <div className="info-form">
-                    <Input onChange={handleChange} type="text" id="company" placeholder="Company name" labelText="Company" />
+                    <Input onChange={handleChange} type="text" id="name" placeholder="Company name" labelText="Company" />
                     <Input onChange={handleChange} type="text" id="position" placeholder="Position in the company" labelText="Position" />
                     <Input onChange={handleChange} type="date" id="start" placeholder="Start date" labelText="Start date" />
                     <Input onChange={handleChange} type="date" id="finish" placeholder="Finish date" labelText="Finish" />

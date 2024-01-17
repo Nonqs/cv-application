@@ -70,12 +70,33 @@ export function App() {
 
   }
 
+  const onDelete = (index) => {
+
+    console.log(index)
+    
+    const updatedList = [...saveStudies];
+    updatedList.splice(index, 1);
+    setSaveStudies(updatedList);
+
+  }
+
+  const onDeleteExperience = (index) => {
+
+    console.log(index)
+    
+    const updatedList = [...saveStudies];
+    updatedList.splice(index, 1);
+    setSaveExperience(updatedList);
+
+  };
+
+
   return (
     <>
       <div>
         <PersonalInfo onChange={onChange} />
-        <Studies onChange={onChangeStudies} onSave={onSave} saveStudies={saveStudies} />
-        <Experience onChange={onChangeExperience} onSave={onSaveExperience} />
+        <Studies onChange={onChangeStudies} onSave={onSave} saveStudies={saveStudies} onDelete={onDelete} />
+        <Experience onChange={onChangeExperience} onSave={onSaveExperience} saveExperience={saveExperience} onDelete={onDeleteExperience}/>
       </div>
       <CvDisplay inputValuesPersonal={inputValuePersonal} inputValueStudies={inputValueStudies} saveStudies={saveStudies} saveExperience={saveExperience}  />
 
