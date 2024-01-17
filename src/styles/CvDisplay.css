@@ -1,0 +1,31 @@
+.cv-main{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 4em;
+    overflow: hidden;
+}
+
+.cv-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2em;
+}
+
+.cv-personal-info{
+    
+}
+
+.cv-personal-text{
+    margin: 15px;
+}
+
+.cv-studies{
+    display: flex;
+}
+
+.cv-studies-text{
+    display: flex;
+    flex-direction: column;
+}

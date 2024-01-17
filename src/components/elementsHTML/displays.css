@@ -1,0 +1,16 @@
+.cv-personal-text{
+    margin: 15px;
+}
+
+.cv-studies{
+    display: flex;
+}
+
+.cv-studies-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.experience-desc{
+    
+}
