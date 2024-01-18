@@ -1,0 +1,11 @@
+.name-div{
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border: #f0eef1 1px solid;
+    margin: 5px;
+    border-radius: 10px;
+    font-size: large;
+    font-weight: bold;
+    padding: 5px;
+}

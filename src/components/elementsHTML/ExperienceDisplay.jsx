@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import "./displays.css"
+import "../../styles/Displays.css"
 
 export function ExperienceDisplay({ saveExperience}) {
 
@@ -11,11 +11,16 @@ export function ExperienceDisplay({ saveExperience}) {
           <section key={index} className="cv-principal" id={index}>
             <div className="studies">
               <div className="cv-studies">
-                <article>
-                  <span>{exp.start} to {exp.finish}</span>
-                </article>
+              {exp.start &&
+                <article className="date">
+                  {exp.finish 
+                  ?<span>{exp.start} to {exp.finish}</span>
+                  :<span>{exp.start} to Present</span>
+                  }
+                  </article>
+                }
                 <article className="cv-studies-text">
-                  <span><strong>{exp.company}</strong></span>
+                  <span><strong>{exp.name}</strong></span>
                   <span>{exp.position}</span>
                 </article>
               </div>

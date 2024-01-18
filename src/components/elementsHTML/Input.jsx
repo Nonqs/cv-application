@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../../styles/Input.css"
 
 export function Input({ id, placeholder, type, labelText, onChange }) {
 
@@ -15,8 +16,8 @@ export function Input({ id, placeholder, type, labelText, onChange }) {
 
     return(
         <>
-        <label htmlFor={id}>{labelText}</label>
-        <input onChange={handleChange} name={id} type={type} id={id} placeholder={placeholder} />
+        <label htmlFor={id} className="input-label">{labelText}</label>
+        <input className="inputs" onChange={handleChange} name={id} type={type} id={id} placeholder={placeholder} />
         </>
     )
 

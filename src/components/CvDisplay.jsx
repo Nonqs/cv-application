@@ -10,18 +10,20 @@ export function CvDisplay({ inputValuesPersonal, saveStudies, saveExperience }) 
             <div className="cv-main">
                 <section className="cv-header">
                     <h2>{inputValuesPersonal.name}</h2>
-                    <article className="cv-personal-info">
+                    <article>
                         <span className="cv-personal-text">{inputValuesPersonal.email}</span>
                         <span className="cv-personal-text">{inputValuesPersonal.number}</span>
                         <span className="cv-personal-text">{inputValuesPersonal.address}</span>
                     </article>
                 </section>
                 
-                <h3>Studies</h3>
+                <section className="cv-personal-info">
+                <h3 className="cv-title">Studies</h3>
                 <StudiesDisplayShow saveStudies={saveStudies} />
                 
-                <h3>Experience</h3>
+                <h3 className="cv-title">Experience</h3>
                 <ExperienceDisplay saveExperience={saveExperience} />
+                </section>
                 
             </div>
         </>

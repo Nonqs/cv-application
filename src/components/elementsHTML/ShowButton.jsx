@@ -1,19 +1,31 @@
+import "../../styles/ShowButton.css"
+import open from "../../img/open.svg"
+import close from "../../img/close.svg"
+import { useState } from "react"
 
+export function ShowButton({ onClick, name }) {
 
-export function ShowButton({ onClick, name }){
+    const [openButton, setOpenButton] = useState(false)
 
-    const handleClick = () =>{
+    const handleClick = () => {
 
-     onClick()
+        onClick()
+        setOpenButton(!openButton)
 
     }
 
-    return(
+    return (
         <>
-        
-        <button onClick={handleClick} >
-        <h2>{name}</h2>
-        </button>
+            {openButton
+                ? <button className="show-button" onClick={handleClick} >
+                    <h2 className="title-button">{name}</h2>
+                    <img className="svg" src={close}></img>
+                </button>
+                : <button className="show-button" onClick={handleClick} >
+                    <h2 className="title-button">{name}</h2>
+                    <img className="svg" src={open}></img>
+                </button>
+            }
         </>
     )
 }

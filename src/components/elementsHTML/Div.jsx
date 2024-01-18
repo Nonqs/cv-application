@@ -1,3 +1,4 @@
+import "../../styles/Div.css"
 
 export function Div({ info, onDelete }) {
 
@@ -11,9 +12,9 @@ export function Div({ info, onDelete }) {
     return (
         <>
             {info.map((display, index) => (
-                <div key={index}>
+                <div className="name-div" key={index}>
                     <p>{display.name}</p>
-                    <button onClick={() => handleClick(index)}>Delete</button>
+                    <button className="form-buttons" style={{backgroundColor: "#ff6961"}} onClick={() => handleClick(index)}>Delete</button>
                 </div>
             ))}
         </>

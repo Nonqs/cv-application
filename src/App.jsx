@@ -3,6 +3,7 @@ import { PersonalInfo } from "./components/Personal-info"
 import { useState } from "react"
 import { Studies } from "./components/Studies"
 import { Experience } from "./components/Experience"
+import "./App.css"
 
 export function App() {
 
@@ -25,13 +26,9 @@ export function App() {
 
     const newInputValues = { ...inputValueStudies };
 
-    // Actualiza el valor del input correspondiente
     newInputValues[id] = value;
 
-    // Actualiza el estado con el nuevo objeto
     setInputValueStudies(newInputValues);
-
-    
 
   }
 
@@ -41,8 +38,7 @@ export function App() {
 
     setSaveStudies((prevStudies) => [...prevStudies, save])
 
-    console.log(saveStudies)
-    console.log(saveStudies[0])
+    setInputValueStudies([])   
 
   }
 
@@ -50,10 +46,8 @@ export function App() {
 
     const newInputValues = { ...inputValueExperience };
 
-    // Actualiza el valor del input correspondiente
     newInputValues[id] = value;
 
-    // Actualiza el estado con el nuevo objeto
     setInputValueExperience(newInputValues);
 
     console.log(newInputValues)
@@ -67,6 +61,8 @@ export function App() {
     setSaveExperience((prevStudies) => [...prevStudies, save])
 
     console.log(saveExperience)
+
+    setInputValueExperience([])
 
   }
 
@@ -93,7 +89,7 @@ export function App() {
 
   return (
     <>
-      <div>
+      <div className="forms-div">
         <PersonalInfo onChange={onChange} />
         <Studies onChange={onChangeStudies} onSave={onSave} saveStudies={saveStudies} onDelete={onDelete} />
         <Experience onChange={onChangeExperience} onSave={onSaveExperience} saveExperience={saveExperience} onDelete={onDeleteExperience}/>

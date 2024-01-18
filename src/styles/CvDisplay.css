@@ -1,16 +1,19 @@
 .cv-main{
-    width: 70%;
+    width: 600px;
+    height: 800px;
     display: flex;
     flex-direction: column;
-    padding: 4em;
-    overflow: hidden;
+    background-color: white;
+    margin: 50px;
+    padding-bottom: 0;
 }
 
 .cv-header{
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 2em;
+    background-color: #84b6f4;
+    padding: 10px;
 }
 
 .cv-personal-info{
@@ -21,6 +24,12 @@
     margin: 15px;
 }
 
+.cv-title{
+    padding-left: 20px;
+    background-color: #84b6f4;
+    width: 60%;
+}
+
 .cv-studies{
     display: flex;
 }
@@ -28,4 +37,8 @@
 .cv-studies-text{
     display: flex;
     flex-direction: column;
+}
+
+.date{
+    margin-right: 20px;
 }

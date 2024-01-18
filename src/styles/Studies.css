@@ -1,0 +1,36 @@
+.studies-div{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 50px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: white 0px 0px 2px;
+}
+
+.add-button{
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    margin: 1em;
+    padding: 0px;
+    
+}
+
+.add-button:hover{
+    
+    box-shadow: black 0px 0px 0px;
+    background-color: gainsboro;
+
+}
+
+.svg-form{
+    width: 4em;
+    
+}

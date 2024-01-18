@@ -1,4 +1,14 @@
 .info-form{
+    width: 60%;
     display: flex;
     flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 45px;
+    background-color: white;
+    border-radius: 10px;
+    border: none;
+    box-shadow: white 0px 0px 2px;
 }
